@@ -1,5 +1,7 @@
 // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
-function AppViewModel() {
+
+$(document).ready(function() {
+  function AppViewModel() {
     this.firstName = ko.observable("Bert");
     this.lastName = ko.observable("Bertington");
     this.fullName = ko.computed(function() {
@@ -10,9 +12,7 @@ function AppViewModel() {
         this.lastName(currentVal.toUpperCase()); // Write back a modified value
     };
 }
-
-// Activates knockout.js
-function Init()
-{
+  
+  // Activates knockout.js
   ko.applyBindings(new AppViewModel());
-}
+});
